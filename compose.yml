@@ -7,7 +7,7 @@ services:
     #   dockerfile: Dockerfile
     network_mode: host
     volumes:
-      - ./workspace:/workspace
+      - ./workspace:/root/workspace/
       - opencode-config:/root/.config/opencode
       - opencode-data:/root/.local/share/opencode
       - opencode-cache:/root/.cache/opencode

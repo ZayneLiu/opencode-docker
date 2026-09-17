@@ -1,0 +1,19 @@
+services:
+  opencode:
+    image: zayneliu/opencode:0.0.1
+    container_name: opencode
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    network_mode: host
+    volumes:
+      - ./workspace:/workspace
+      - opencode-config:/root/.config/opencode
+      - opencode-data:/root/.local/share/opencode
+      - opencode-cache:/root/.cache/opencode
+    command: sleep infinity # or: tail -f /dev/null
+
+volumes:
+  opencode-config:
+  opencode-data:
+  opencode-cache:

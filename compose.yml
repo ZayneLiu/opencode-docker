@@ -1,6 +1,6 @@
 services:
   opencode:
-    image: zayneliu/opencode:0.0.1
+    image: zayneliu/opencode:0.0.2
     container_name: opencode
     # build:
     #   context: .

@@ -1,10 +1,10 @@
 FROM debian:trixie
 
 RUN apt update && apt install -y --no-install-recommends \
-    zsh hx curl \
-    ca-certificates \
-    git unzip \
-    && rm -rf /var/lib/apt/lists/*
+  zsh hx curl \
+  ca-certificates \
+  git unzip \
+  && rm -rf /var/lib/apt/lists/*
 
 # change default shell to zsh
 RUN chsh -s /bin/zsh
@@ -23,7 +23,7 @@ RUN echo "export PATH=/root/.opencode/bin:\$PATH" | tee -a .zshrc
 
 # install rtk
 RUN curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/master/install.sh | sh
-RUN zsh -c "source /root/.zshrc && rtk init --global --opencode"
+RUN zsh -c "source /root/.zshrc && (echo 'N' | rtk init --global --opencode)"
 
 RUN curl -fsSL https://fnm.vercel.app/install | bash
 
